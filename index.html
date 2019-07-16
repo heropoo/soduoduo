@@ -30,6 +30,8 @@
 			<option value="360">360</option>
 			<option value="sogou">搜狗</option>
 			<option value="google">谷歌</option>
+			<option value="duckduckgo">DuckDuckGo</option>
+			<option value="yandex">Yandex</option>
 		</select>
 		<button type="submit">搜索</button>			
 	</form>
@@ -42,7 +44,9 @@
 		"sogou": "https://www.sogou.com/web?query=",
 		"bing": "https://bing.com/search?q=",
 		"baidu": "https://www.baidu.com/s?wd=",
-		"google": "https://www.google.com/search?q="
+		"google": "https://www.google.com/search?q=",
+		"duckduckgo": "https://duckduckgo.com/?q=",
+		"yandex": "https://yandex.com/search/?text="
 	};
 	$(function(){
         $("#kw").focus();
@@ -65,7 +69,7 @@
 		var kw = $("#kw").val();
 		var engine = $("#engine").val();
 		var url = searchMap[engine]+kw;
-		if(engine == 'google'){	
+		if(engine == 'google' || engine == 'duckduckgo' || engine == 'yandex'){	
 			window.open(url);
 			return false;
 		}
